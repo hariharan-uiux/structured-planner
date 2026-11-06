@@ -139,7 +139,7 @@ export const Timeline: React.FC<TimelineProps> = ({
                 className="relative my-4 flex items-center z-20 group"
                 title={`Current time: ${formatHour(currentTimeDecimal, use24Hour)}`}
               >
-                <div className="absolute -left-12 sm:-left-16 flex items-center gap-1 text-[10px] font-bold text-[#F88E87]">
+                <div className="absolute -left-28 sm:-left-32 w-16 flex items-center justify-end gap-1 text-[10px] font-bold text-[#F88E87] whitespace-nowrap">
                   <span className="size-2 rounded-full bg-[#F88E87] animate-ping" />
                   <span className="size-2 rounded-full bg-[#F88E87] -ml-3" />
                   <span>{formatHour(currentTimeDecimal, use24Hour)}</span>
@@ -165,7 +165,7 @@ export const Timeline: React.FC<TimelineProps> = ({
                     {prevEnd !== null && gapMinutes >= 15 && (
                       <div className="relative py-2 flex items-center">
                         {/* Time marker on spine */}
-                        <div className="absolute -left-12 sm:-left-16 text-[10px] font-semibold text-[#858585]/70 tabular-nums">
+                        <div className="absolute -left-28 sm:-left-32 w-16 text-[10px] font-semibold text-[#858585]/70 tabular-nums text-right whitespace-nowrap">
                           {formatHour(prevEnd, use24Hour)}
                         </div>
 
@@ -187,7 +187,7 @@ export const Timeline: React.FC<TimelineProps> = ({
                     {/* Task Item */}
                     <div className="relative group">
                       {/* Left time label on spine */}
-                      <div className="absolute -left-12 sm:-left-16 top-4 text-xs font-semibold text-[#858585] tabular-nums">
+                      <div className="absolute -left-28 sm:-left-32 w-16 top-4 text-xs font-semibold text-[#858585] tabular-nums text-right whitespace-nowrap">
                         {formatHour(task.startTime ?? 0, use24Hour)}
                       </div>
 

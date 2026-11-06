@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Settings, ColorKey } from '../types';
 import { STRUCTURED_COLORS, COLOR_KEYS } from '../utils/colors';
 import { sound } from '../utils/audio';
@@ -33,6 +33,16 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
   onResetDemo,
   onClearAll,
 }) => {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   return (
