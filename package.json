@@ -2,7 +2,7 @@
   "name": "structured-web",
   "version": "1.0.1",
   "description": "Visual day planner and timeline schedule for Web, iOS, and Android",
-  "author": "HariHaran",
+  "author": "HariHaran <haridhina3051@gmail.com>",
   "type": "module",
   "main": "electron-main.cjs",
   "scripts": {
